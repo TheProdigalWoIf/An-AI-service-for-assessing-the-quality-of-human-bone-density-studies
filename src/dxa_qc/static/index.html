@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>DXA QC Lab</title>
+  <link rel="stylesheet" href="/styles.css?v=20260924-1">
+</head>
+<body>
+  <main>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="DXA QC Lab"><span class="brand-mark">DX</span><span><b>DXA QC Lab</b><small>контроль качества денситометрии</small></span></a>
+      <div class="header-actions"><span id="modelState" class="model-state"><i></i> модель</span><button id="export" class="button secondary">Экспорт CSV</button></div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">Локальный AI-анализ</span>
+        <h1>Проверьте качество<br>DXA-снимка</h1>
+        <p>Загрузите DICOM или обычное изображение. Модель определит анатомическую область, класс качества и вероятный тип нарушения.</p>
+        <div class="privacy"><span>◆</span> Файл анализируется локально и не сохраняется на сервере</div>
+      </div>
+      <form id="uploadForm" class="upload-card">
+        <input id="fileInput" type="file" multiple accept=".dcm,.dicom,.jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp" hidden>
+        <div id="dropzone" class="dropzone" tabindex="0" role="button" aria-label="Выбрать изображение">
+          <div class="upload-icon" aria-hidden="true">↑</div><h2>Перетащите снимки сюда</h2><p>можно выбрать сразу несколько файлов</p>
+          <button type="button" id="chooseFile" class="button primary">Выбрать снимки</button><small>DICOM, JPEG, PNG, WebP · до 50 файлов · до 25 МБ каждый</small>
+        </div>
+        <div id="fileReady" class="file-ready" hidden>
+          <div id="previewWrap" class="preview-wrap"><img id="uploadPreview" alt="Предпросмотр снимка"></div>
+          <div class="file-meta"><b id="fileName"></b><span id="fileSize"></span><div id="fileQueue" class="file-queue"></div></div>
+          <button type="button" id="removeFile" class="icon-button" aria-label="Удалить файл">×</button>
+          <button type="submit" id="analyzeButton" class="button primary analyze-button">Проверить снимки <span>→</span></button>
+        </div>
+      </form>
+    </section>
+
+    <section id="analysisResult" class="result-panel" hidden aria-live="polite">
+      <div class="result-head"><div><span class="eyebrow">Результаты анализа</span><h2 id="resultSummary">Снимки</h2></div><button id="newCheck" class="button secondary">Проверить другие</button></div>
+      <div id="batchResults" class="batch-results"></div>
+      <p class="medical-note">Результат получен исследовательской моделью и не является медицинским заключением.</p>
+    </section>
+
+  </main>
+  <!-- Полноэкранный просмотр снимка (открывается кликом по превью) -->
+  <div id="lightbox" hidden>
+    <button id="lightboxClose" type="button" aria-label="Закрыть просмотр">×</button>
+    <div id="lightboxContent"></div>
+  </div>
+  <div id="toast"></div><script src="/app.js?v=20260924-1"></script>
+</body>
+</html>

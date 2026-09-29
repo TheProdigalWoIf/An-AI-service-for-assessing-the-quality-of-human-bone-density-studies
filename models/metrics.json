@@ -1,0 +1,181 @@
+{
+  "model": "ResNet18 multitask (region/side/quality/5 criteria), ImageNet initialization",
+  "device": "cpu",
+  "seed": 42,
+  "split": {
+    "train": {
+      "images": 212,
+      "studies": 72
+    },
+    "validation": {
+      "images": 37,
+      "studies": 28
+    }
+  },
+  "labels": {
+    "total": 251,
+    "excluded": 0,
+    "unlabeled": 2,
+    "used": 249
+  },
+  "thresholds": {
+    "quality": 0.5,
+    "violations": {
+      "spine_positioning_incorrect": 0.5,
+      "spine_axis_misalignment": 0.5,
+      "spine_artifact_or_object": 0.5,
+      "hip_positioning_incorrect": 0.5,
+      "hip_roi_incorrect": 0.5
+    }
+  },
+  "validation": {
+    "quality": {
+      "sensitivity": 0.5455,
+      "specificity": 0.8846,
+      "balanced_accuracy": 0.715,
+      "f1": 0.6,
+      "roc_auc": 0.6084,
+      "f1_95_ci": [
+        0.2757,
+        0.8405
+      ],
+      "roc_auc_95_ci": [
+        0.3854,
+        0.838
+      ]
+    },
+    "quality_by_anatomical_region": {
+      "lumbar_spine": {
+        "sensitivity": 0.375,
+        "specificity": 1.0,
+        "balanced_accuracy": 0.6875,
+        "f1": 0.5455,
+        "roc_auc": 0.6118,
+        "images": 27
+      },
+      "proximal_femur": {
+        "sensitivity": 1.0,
+        "specificity": 0.5714,
+        "balanced_accuracy": 0.7857,
+        "f1": 0.6667,
+        "roc_auc": 0.5714,
+        "images": 10
+      }
+    },
+    "region": {
+      "accuracy": 1.0,
+      "macro_f1": 1.0
+    },
+    "side": {
+      "accuracy": 1.0,
+      "right": {
+        "accuracy": 1.0,
+        "support": 2
+      },
+      "left": {
+        "accuracy": 1.0,
+        "support": 8
+      }
+    },
+    "violations": {
+      "macro_f1_supported_classes": 0.3341,
+      "unsupported_in_split": [
+        "hip_roi_incorrect"
+      ],
+      "exact_match": 0.0,
+      "per_class": {
+        "spine_positioning_incorrect": {
+          "sensitivity": 1.0,
+          "specificity": 1.0,
+          "balanced_accuracy": 1.0,
+          "f1": 1.0,
+          "roc_auc": 1.0,
+          "support": 1
+        },
+        "spine_axis_misalignment": {
+          "sensitivity": 0.0,
+          "specificity": 0.7222,
+          "balanced_accuracy": 0.3611,
+          "f1": 0.0,
+          "roc_auc": 0.5278,
+          "support": 1
+        },
+        "spine_artifact_or_object": {
+          "sensitivity": 0.3333,
+          "specificity": 0.6774,
+          "balanced_accuracy": 0.5054,
+          "f1": 0.2222,
+          "roc_auc": 0.6129,
+          "support": 6
+        },
+        "hip_positioning_incorrect": {
+          "sensitivity": 0.6667,
+          "specificity": 0.1176,
+          "balanced_accuracy": 0.3922,
+          "f1": 0.1143,
+          "roc_auc": 0.402,
+          "support": 3
+        },
+        "hip_roi_incorrect": {
+          "sensitivity": 0.0,
+          "specificity": 0.2973,
+          "balanced_accuracy": 0.1486,
+          "f1": 0.0,
+          "roc_auc": 0.5,
+          "support": 0
+        }
+      }
+    },
+    "seconds_per_image": 0.0305,
+    "images": 37,
+    "studies": 28
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 2.67681,
+      "validation_score": 0.65167
+    },
+    {
+      "epoch": 2,
+      "train_loss": 1.47837,
+      "validation_score": 0.67068
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.82868,
+      "validation_score": 0.73022
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.385,
+      "validation_score": 0.74013
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.20191,
+      "validation_score": 0.76228
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.15423,
+      "validation_score": 0.69468
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.19408,
+      "validation_score": 0.68624
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.30737,
+      "validation_score": 0.68712
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.25936,
+      "validation_score": 0.6699
+    }
+  ],
+  "limitations": "Metrics are computed on the validation split, which is also used for early stopping and threshold tuning, so the estimate is optimistic; the real holdout is the external unlabeled folder Исследования_тест. Labels are non-clinical visual annotations and require physician verification. Support for several criteria is very small; per-class F1 for those criteria is not reliable."
+}

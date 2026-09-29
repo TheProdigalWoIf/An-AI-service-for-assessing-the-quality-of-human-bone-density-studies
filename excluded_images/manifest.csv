@@ -1,0 +1,4 @@
+﻿path_to_study;study_uid;image_uid;anatomical_region;side;quality_class;correct_positioning;spine_axis_alignment;foreign_objects_artifacts;hip_positioning_rotation;hip_roi_correctness;notes;exclude_from_training;excluded_at;reason
+70\70_1\п.dcm;70;145;lumbar_spine;none;0;0;0;0;0;0;;True;2026-09-28T18:13:46+00:00;эндопротез ТБС: экспертные критерии качества не размечены
+70\70_2\пб.dcm;70;146;proximal_femur;right;;;;;;;эндопротезирования ТБС;True;2026-09-28T18:13:46+00:00;эндопротез ТБС: экспертные критерии качества не размечены
+70\70_3\лб.dcm;70;147;proximal_femur;left;;;;;;;эндопротезирования ТБС;True;2026-09-28T18:13:46+00:00;эндопротез ТБС: экспертные критерии качества не размечены

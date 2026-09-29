@@ -1,0 +1,16 @@
+services:
+  dxa-qc:
+    build: .
+    ports:
+      - "1639:8000"
+    volumes:
+      # Тестовый набор калибровки (20 исследований): только он показывается
+      # на сайте; обучающие данные в контейнер не монтируются.
+      - ./Исследования_тест:/data:ro
+      - ./annotations:/annotations
+      - ./models:/app/models:ro
+    environment:
+      # Калибровочная модель качества (см. scripts/train_calibration.py).
+      DXA_MODEL_PATH: /app/models/calibration_resnet18.pt
+      DXA_DATA_ROOT: /data
+    restart: unless-stopped

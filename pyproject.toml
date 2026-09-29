@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dxa-qc-lab"
+version = "1.0.0"
+description = "Local DXA quality-control and annotation service"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi==0.115.6",
+  "uvicorn[standard]==0.34.0",
+  "pydicom==3.0.1",
+  "numpy==2.2.1",
+  "Pillow==11.1.0",
+  "python-multipart==0.0.20",
+  "torch==2.6.0",
+  "torchvision==0.21.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+dxa_qc = ["static/*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

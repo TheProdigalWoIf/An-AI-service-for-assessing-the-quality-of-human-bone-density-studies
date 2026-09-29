@@ -1,0 +1,16 @@
+.venv/
+.venv*/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+Results/
+Results.zip
+annotations/
+output/
+.torch/
+.codex-finalizer/
+.chart-data-*/
+tmp/

@@ -1,0 +1,178 @@
+{
+  "model": "ResNet18 multitask (калибровка)",
+  "seed": 42,
+  "data": {
+    "train": 205,
+    "validation": 44,
+    "train_studies": 80,
+    "val_studies": 20
+  },
+  "validation": {
+    "sensitivity": 0.6,
+    "specificity": 0.6552,
+    "f1": 0.5294,
+    "roc_auc": 0.6138,
+    "part_accuracy": 0.9773,
+    "support": 44
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 2.9252,
+      "val": {
+        "sensitivity": 0.3333,
+        "specificity": 0.7241,
+        "f1": 0.3571,
+        "roc_auc": 0.5057,
+        "part_accuracy": 1.0,
+        "support": 44
+      }
+    },
+    {
+      "epoch": 2,
+      "train_loss": 1.86239,
+      "val": {
+        "sensitivity": 0.4,
+        "specificity": 0.5862,
+        "f1": 0.3636,
+        "roc_auc": 0.5126,
+        "part_accuracy": 0.9773,
+        "support": 44
+      }
+    },
+    {
+      "epoch": 3,
+      "train_loss": 1.22551,
+      "val": {
+        "sensitivity": 0.4667,
+        "specificity": 0.5517,
+        "f1": 0.4,
+        "roc_auc": 0.5287,
+        "part_accuracy": 0.9773,
+        "support": 44
+      }
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.80562,
+      "val": {
+        "sensitivity": 0.3333,
+        "specificity": 0.6897,
+        "f1": 0.3448,
+        "roc_auc": 0.5632,
+        "part_accuracy": 0.9773,
+        "support": 44
+      }
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.48548,
+      "val": {
+        "sensitivity": 0.4,
+        "specificity": 0.6207,
+        "f1": 0.375,
+        "roc_auc": 0.508,
+        "part_accuracy": 1.0,
+        "support": 44
+      }
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.34807,
+      "val": {
+        "sensitivity": 0.4,
+        "specificity": 0.6207,
+        "f1": 0.375,
+        "roc_auc": 0.5609,
+        "part_accuracy": 0.9773,
+        "support": 44
+      }
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.3689,
+      "val": {
+        "sensitivity": 0.6,
+        "specificity": 0.6552,
+        "f1": 0.5294,
+        "roc_auc": 0.6138,
+        "part_accuracy": 0.9773,
+        "support": 44
+      }
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.46402,
+      "val": {
+        "sensitivity": 0.4,
+        "specificity": 0.7931,
+        "f1": 0.4444,
+        "roc_auc": 0.6207,
+        "part_accuracy": 1.0,
+        "support": 44
+      }
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.41713,
+      "val": {
+        "sensitivity": 0.5333,
+        "specificity": 0.5862,
+        "f1": 0.4571,
+        "roc_auc": 0.5448,
+        "part_accuracy": 0.9773,
+        "support": 44
+      }
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.33496,
+      "val": {
+        "sensitivity": 0.3333,
+        "specificity": 0.6552,
+        "f1": 0.3333,
+        "roc_auc": 0.5287,
+        "part_accuracy": 1.0,
+        "support": 44
+      }
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.24293,
+      "val": {
+        "sensitivity": 0.2667,
+        "specificity": 0.6897,
+        "f1": 0.2857,
+        "roc_auc": 0.5356,
+        "part_accuracy": 1.0,
+        "support": 44
+      }
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.17546,
+      "val": {
+        "sensitivity": 0.3333,
+        "specificity": 0.6552,
+        "f1": 0.3333,
+        "roc_auc": 0.5586,
+        "part_accuracy": 1.0,
+        "support": 44
+      }
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.21751,
+      "val": {
+        "sensitivity": 0.2667,
+        "specificity": 0.7586,
+        "f1": 0.3077,
+        "roc_auc": 0.5448,
+        "part_accuracy": 1.0,
+        "support": 44
+      }
+    }
+  ],
+  "axis_rule": "отклонение оси до 5° по таблице разметки",
+  "limitations": "Модель обучена на калибровочной разметке одного эксперта; клинические отклонения (сколиоз, перелом, эндопротез, люмбализация) не считаются нарушением качества снимка."
+}
